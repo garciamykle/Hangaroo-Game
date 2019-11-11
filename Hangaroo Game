@@ -1,0 +1,12 @@
+secretWord = str(input("Please Enter the word to guess: "))
+lettersGuessed = list(input("Please type a list of letters!: "))
+alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+   
+def getAvailableLetters(lettersGuessed):
+    available_letters = []
+    for x in alphabet:
+        available_letters = ["" if x in lettersGuessed else x for x in alphabet]
+    print (''.join(available_letters))
+
+    return x
+getAvailableLetters(lettersGuessed)
