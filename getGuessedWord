@@ -1,39 +1,41 @@
-secretWord = input("Tell us the secret word to be guess')
+secretWord = input("please type the desired guess word: \n")
 length_word = len(secretWord)
 lettersGuessed = []
 alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 guessWord =[]
 
-def secret():
+
+def getGuessedWord():
+    
     for character in secretWord:
         guessWord.append("_")
         
     print ("The word you have to guess has", length_word, "characters")
     print (' '.join(guessWord))
     
-def getGuessedWord():
-    
     turns = 1
     
     while turns < 3:
         
-        guess = input("Pick a letter: \n")
+        guess = input("Pick a letter: \n").lower()
         
         if guess not in alphabet:
-            print ("Do you not know what a letter is? Please pick a LETTER...")
+            print ("not a letter...\n")
         elif guess in lettersGuessed:
-            print("You have already guessed that letter!")
+            print("already been used...\n")
+        elif guess not in secretWord:
+            print("Wrong guess...\n")
         else:
             lettersGuessed.append(guess)
             if guess in secretWord:
-                print ("WOW! You're good! You guess correctly!")
+                print ("nice")
                 for x in range(0, length_word):
                     if secretWord[x] == guess:
                         guessWord[x] = guess
                         print(' '.join(guessWord))
                         
         if '_' not in guessWord:
-                        print("YOU WON! CONGRATULATIONS!")
+                        print("yes... you won... congrats...")
                         break
-secret()
+
 getGuessedWord()
