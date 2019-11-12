@@ -34,7 +34,7 @@ def guessing():
 
     while turns < 3:
         print ("\n", ' '.join(alphabet))
-        guess = input("Please Choose a letter: \n")
+        guess = input("Please Choose a letter: \n").lower()
         
         if guess not in alphabet:
             print ("Do you not know what a letter is? Please pick a LETTER...")
