@@ -61,7 +61,7 @@ def guessing():
                     print("The secret word was", secretWord)
                     break
         if '_' not in guessWord:
-                        print("YOU WON! CONGRATULATIONS!")
+                        print("YOU WON! CONGRATULATIONS!\n")
                         break              
 secret()
 guessing()
